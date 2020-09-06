@@ -53,6 +53,9 @@ let g:ale_fixers = {
 
 let g:ale_fix_on_save = 1
 
+" vim-javascript
+let g:javascript_plugin_jsdoc = 1
+
 set t_Co=256
 
 " plugins
@@ -60,6 +63,14 @@ call plug#begin('~/.vim/plugged')
 
 " Plugins for languages support
 Plug 'fatih/vim-go'
+Plug 'jparise/vim-graphql'
+
+" Syntax plugins
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'jparise/vim-graphql'
 
 " Vim LSP
@@ -121,3 +132,6 @@ map <C-f> :Rg<CR>
 map <C-g> :BCommits!<CR>
 
 nmap <silent> gd :call CocActionAsync('jumpDefinition')<CR>
+
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
