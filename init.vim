@@ -107,6 +107,8 @@ Plug 'dense-analysis/ale'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 
+Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
+
 call plug#end()
 
 source ~/.config/nvim/themes/onedark.vim
