@@ -135,3 +135,4 @@ nmap <silent> gd :call CocActionAsync('jumpDefinition')<CR>
 
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nmap <leader>rn <Plug>(coc-rename)
