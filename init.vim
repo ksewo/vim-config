@@ -16,9 +16,6 @@ highlight GitGutterChange guifg=#bbbb00 ctermfg=Yellow
 highlight GitGutterDelete guifg=#ff2222 ctermfg=Red
 highlight clear SignColumn
 
-"vim-css-color
-let g:cssColorVimDoNotMessMyUpdatetime = 1
-
 " FZF
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
 let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --margin=1,4"
@@ -58,6 +55,21 @@ let g:javascript_plugin_jsdoc = 1
 
 set t_Co=256
 
+" Specify the path to `coverage.json` file relative to your current working directory.
+let g:coverage_json_report_path = 'coverage/coverage-final.json'
+
+" Define the symbol display for covered lines
+let g:coverage_sign_covered = '⦿'
+
+" Define the interval time of updating the coverage lines
+let g:coverage_interval = 1000
+
+" Do not display signs on covered lines
+let g:coverage_show_covered = 0
+
+" Display signs on uncovered lines
+let g:coverage_show_uncovered = 1
+
 " plugins
 call plug#begin('~/.vim/plugged')
 
@@ -82,7 +94,7 @@ Plug 'tpope/vim-fugitive'
 " StatusBar
 Plug 'vim-airline/vim-airline'
 " highlighting css colors
-Plug 'skammer/vim-css-color'
+Plug 'ap/vim-css-color'
 
 Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
 
@@ -108,9 +120,17 @@ Plug 'xolox/vim-session'
 
 Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
 
+Plug 'ruanyl/coverage.vim'
+
+Plug 'liuchengxu/vim-which-key'
+
+Plug 'voldikss/vim-floaterm'
+
 call plug#end()
 
 source ~/.config/nvim/themes/onedark.vim
+source ~/.config/nvim/keys/which-key.vim
+source ~/.config/nvim/plug-config/floaterm.vim
 
 " Shortcuts
 nmap <Tab> %
@@ -137,3 +157,6 @@ nmap <silent> gd :call CocActionAsync('jumpDefinition')<CR>
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nmap <leader>rn <Plug>(coc-rename)
+
+" Aliases
+cabbrev gocov GoCoverageToggle
