@@ -126,6 +126,8 @@ Plug 'liuchengxu/vim-which-key'
 
 Plug 'voldikss/vim-floaterm'
 
+Plug 'ekalinin/Dockerfile.vim'
+
 call plug#end()
 
 source ~/.config/nvim/themes/onedark.vim
