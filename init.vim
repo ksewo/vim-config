@@ -119,8 +119,6 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'rust-lang/rust.vim'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
 
-Plug 'wakatime/vim-wakatime'
-
 " Vim LSP
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neovim/nvim-lspconfig'
